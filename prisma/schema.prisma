@@ -34,6 +34,59 @@ model Player {
   country       String?
   role          String?
   teamName      String?
+  overviewPage  String?
+  player        String?
+  image         String?
+  nameAlphabet  String?
+  nameFull      String?
+  nativeName    String?
+  nationality   String?
+  nationalityPrimary String?
+  age           Int?
+  birthdate     String?
+  deathdate     String?
+  residencyFormer String?
+  team2         String?
+  currentTeams  String?
+  teamSystem    String?
+  team2System   String?
+  residency     String?
+  contract      String?
+  contractText  String?
+  favChamps     String?
+  soloqueueIds  String?
+  askfm         String?
+  bluesky       String?
+  discord       String?
+  facebook      String?
+  instagram     String?
+  lolpros       String?
+  dpmlol        String?
+  reddit        String?
+  snapchat      String?
+  stream        String?
+  kick          String?
+  twitter       String?
+  threads       String?
+  linkedIn      String?
+  vk            String?
+  website       String?
+  weibo         String?
+  youtube       String?
+  teamLast      String?
+  roleLast      String?
+  isRetired     Boolean?
+  toWildrift    Boolean?
+  toValorant    Boolean?
+  toTFT         Boolean?
+  toLegendsOfRuneterra Boolean?
+  to2XKO        Boolean?
+  isPersonality Boolean?
+  isSubstitute  Boolean?
+  isTrainee     Boolean?
+  isLowercase   Boolean?
+  isAutoTeam    Boolean?
+  isLowContent  Boolean?
 
   isActive      Boolean  @default(true)
 

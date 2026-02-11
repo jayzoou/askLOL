@@ -1,9 +1,9 @@
 export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
-import { syncLckPlayers } from "@/lib/syncPlayers";
+import { syncPlayers } from "@/lib/syncPlayers";
 
 export async function POST() {
-  const result = await syncLckPlayers();
+  const result = await syncPlayers();
   return NextResponse.json({ ok: true, ...result });
 }
