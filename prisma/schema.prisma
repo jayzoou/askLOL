@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+
+enum Region {
+  LCK
+  LPL
+  LEC
+  LTA
+  OTHER
+}
+
+model Player {
+  id            String   @id @default(cuid())
+  region        Region
+
+  leaguepediaId Int?     @unique
+  slug          String   @unique
+  name          String?
+  country       String?
+  role          String?
+  teamName      String?
+
+  isActive      Boolean  @default(true)
+
+  dataHash      String?
+  lastSyncedAt  DateTime @default(now())
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([region, isActive])
+  @@index([teamName])
+}
